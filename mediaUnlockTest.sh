@@ -3,7 +3,8 @@ UA_Browser="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 UA_Dalvik="Dalvik/2.1.0 (Linux; U; Android 9; ALP-AL00 Build/HUAWEIALP-AL00)"
 DisneyAuth="grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange&latitude=0&longitude=0&platform=browser&subject_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiNDAzMjU0NS0yYmE2LTRiZGMtOGFlOS04ZWI3YTY2NzBjMTIiLCJhdWQiOiJ1cm46YmFtdGVjaDpzZXJ2aWNlOnRva2VuIiwibmJmIjoxNjIyNjM3OTE2LCJpc3MiOiJ1cm46YmFtdGVjaDpzZXJ2aWNlOmRldmljZSIsImV4cCI6MjQ4NjYzNzkxNiwiaWF0IjoxNjIyNjM3OTE2LCJqdGkiOiI0ZDUzMTIxMS0zMDJmLTQyNDctOWQ0ZC1lNDQ3MTFmMzNlZjkifQ.g-QUcXNzMJ8DwC9JqZbbkYUSKkB1p4JGW77OON5IwNUcTGTNRLyVIiR8mO6HFyShovsR38HRQGVa51b15iAmXg&subject_token_type=urn%3Abamtech%3Aparams%3Aoauth%3Atoken-type%3Adevice"
 DisneyHeader="authorization: Bearer ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84"
-HostName=`hostname | awk -F "-" '{print $3,$4}' | sed 's/ /-/'`
+CountryCode=`hostname | awk -F "-" '{print $3}'`
+NodeID=`hostname | awk -F "-" '{print $4}'`
 #tr "\n" ","|sed -e 's/,$/\n/'
 function InstallJQ() {
     #安装JQ
@@ -423,7 +424,8 @@ function MediaUnlockTest_BilibiliTW() {
     esac
 }
 function Start_MediaUnlockTest(){
-    echo "${HostName}"
+    echo "NodeID";
+    echo "CountryCode";
     GameTest_Steam ${1};
     MediaUnlockTest_Netflix ${1};
     MediaUnlockTest_MyTVSuper ${1};
