@@ -422,6 +422,7 @@ function MediaUnlockTest_BilibiliTW() {
     esac
 }
 function MediaUnlockTest(){
+    hostname | awk -F "-" '{print $3,$4}' | sed 's/ /-/'
     GameTest_Steam
     MediaUnlockTest_Netflix
     MediaUnlockTest_MyTVSuper
