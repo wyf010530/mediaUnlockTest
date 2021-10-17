@@ -65,7 +65,7 @@ function MediaUnlockTest_Netflix() {
     local result2=`curl  --user-agent "${UA_Browser}" -sL "https://www.netflix.com/title/80027042" 2>&1`
     local result3=`curl  --user-agent "${UA_Browser}" -sL "https://www.netflix.com/title/70140425" 2>&1`
     local result4=`curl  --user-agent "${UA_Browser}" -sL "https://www.netflix.com/title/70283261" 2>&1`
-    local result5=`curl  --user-agent "${UA_Browser}"-sL "https://www.netflix.com/title/70143860" 2>&1`
+    local result5=`curl  --user-agent "${UA_Browser}" -sL "https://www.netflix.com/title/70143860" 2>&1`
     local result6=`curl  --user-agent "${UA_Browser}" -sL "https://www.netflix.com/title/70202589" 2>&1`
     
     if [[ "$result1" == *"page-404"* ]] && [[ "$result2" == *"page-404"* ]] && [[ "$result3" == *"page-404"* ]] && [[ "$result4" == *"page-404"* ]] && [[ "$result5" == *"page-404"* ]] && [[ "$result6" == *"page-404"* ]];then
