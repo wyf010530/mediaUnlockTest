@@ -424,8 +424,8 @@ function MediaUnlockTest_BilibiliTW() {
     esac
 }
 function Start_MediaUnlockTest(){
-    echo "NodeID";
-    echo "CountryCode";
+    echo "${NodeID}";
+    echo "${CountryCode}";
     GameTest_Steam ${1};
     MediaUnlockTest_Netflix ${1};
     MediaUnlockTest_MyTVSuper ${1};
