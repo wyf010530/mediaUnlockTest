@@ -8,5 +8,5 @@ fi
 
 for i in $(cat ip.txt)
 do
-    ssh -p 16028 -D 1080 -C -q root@${i} "bash <(curl -sSL "https://raw.githubusercontent.com/wyf010530/mediaUnlockTest/main/mediaUnlockTest.sh")" | tr "\n" ","|sed -e 's/,$/\n/' >> output.csv
+    ssh -p 16028 -D 1080 -C -q root@${i} "bash <(curl -sSL "https://github.com/wyf010530/mediaUnlockTest/raw/main/mediaUnlockTest.sh")" | tr "\n" ","|sed -e 's/,$/\n/' >> output.csv
 done
